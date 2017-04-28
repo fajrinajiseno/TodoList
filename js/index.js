@@ -8,10 +8,7 @@ $(function(){
 		listTask = []; 
 	}
 	var indexLoad = listTask.length - 1;
-	var indexStop = indexLoad - 5;
-	if (indexStop < 0){
-		$("#plusTask").remove();
-	}
+	var indexStop = listTask.length - 1;
 	$('.datetime').datetimepicker({
 		pickDate: true,
 		pickTime: true
@@ -106,6 +103,7 @@ $(function(){
 			$("#toDoList").html("<h2 class='text-center'><div class='alert alert-danger'>To do list masih kosong!</div></h2>");
 		}
 		else{
+			indexStop = indexLoad - 5;
 			while (indexLoad >= 0 && indexLoad > indexStop){ 
 				var cli = JSON.parse(listTask[indexLoad]); 
 				var done = "";
@@ -133,8 +131,10 @@ $(function(){
 				); 
 				indexLoad--;
 			}
-			indexStop = indexStop - 5;
 		}		
+		if (indexStop < 0){
+			$("#plusTask").remove();
+		}
 	}	
 
 	/* Submit form handler */
@@ -240,8 +240,5 @@ $(function(){
 	/* Plus on click handler */
 	$("#plusTask").bind("click", function(){ 
 		List();
-		if (indexStop < 0) {
-			$("#plusTask").remove();
-		}
 	});
 });
