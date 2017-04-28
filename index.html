@@ -1,0 +1,95 @@
+<html> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Javascript -->
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src='plugin/bootstrap/js/bootstrap.min.js'></script>
+		<script type="text/javascript" src="js/index.js"></script> 
+		
+		<!-- Styles -->
+		<link href='plugin/bootstrap/css/bootstrap.min.css' rel='stylesheet' media='all' type='text/css' />
+		<link href='plugin/font-awesome/css/font-awesome.min.css' rel="stylesheet" type="text/css" />
+		<link href='css/style.css' rel='stylesheet' media='all' type='text/css' />
+		
+		<!-- Date Picker -->
+		<script src="plugin/datetimepicker/moment.js"></script>
+		<link href="plugin/datetimepicker/bootstrap-datetimepicker.min.css" rel="stylesheet">
+		<script src="plugin/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+		
+		<!-- Alert Popup script -->
+		<link href="plugin/x0popup/x0popup.min.css" rel="stylesheet">
+		<script src="plugin/x0popup/x0popup.min.js"></script>
+		
+		
+		<title>To Do List </title>
+	</head> 
+	<body> 
+		<div class="wrap">
+			<h1 class="mainHeader text-center"> To Do List</h1>
+			<form id="inputTaskForm" class="form-horizontal"> 
+				<div class="form-group">
+				  <label for="judulTask" class="col col-form-label">Judul Task</label>
+				  <div class="col-12">
+					<input class="form-control" type="text" id="judulTask" required>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <label for="deskripsiTask" class="col col-form-label">Deskripsi</label>
+				  <div class="col-12">
+					<input class="form-control" type="text" id="deskripsiTask" required>
+				  </div>
+				</div>
+				<div class="form-group">
+					<label for="tanggalMulai" class="col col-form-label">Tanggal Mulai</label>
+					<div class="col-12">
+						<div class="input-group datetime">
+							<input type="text" placeholder="Day-Month-Year Hour:minute" data-date-format="DD-MM-YYYY HH:mm" id="tanggalMulai" class="form-control" readonly="true" required/>
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+							</span>
+						</div>
+						<div class="text-danger"></div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="tanggalSelesai" class="col col-form-label">Tanggal Selesai</label>
+					<div class="col-12">
+						<div class="input-group datetime">
+							<input type="text" placeholder="Day-Month-Year Hour:minute" data-date-format="DD-MM-YYYY HH:mm" id="tanggalSelesai" class="form-control" readonly="true" required/>
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button>
+							</span>
+						</div>
+						<div class="text-danger"></div>
+					</div>
+				</div>
+				<div class="form-group">
+				  <label for="prioritas" class="col col-form-label">Prioritas</label>
+				  <div class="col-12">
+					<select class="form-control" type="text" id="prioritas" required>					
+						  <option value="">Silahkan pilh prioritas</option>
+						  <option value="Low">Low</option>
+						  <option value="Medium">Medium</option>
+						  <option value="High">High</option>
+					</select>
+				  </div>
+				</div>	
+				<div class="form-group text-right">
+					<label class="form-check-label">
+					  <input type="checkbox" class="form-check-input" id="done">
+					  Check jika task sudah selesai
+					</label>
+				</div>
+				<div class="form-group text-right">
+					<button type="button" class="btn btn-block btn-primary" value="Save" id="btnSave">Submit</button>	
+				</div>		
+			</form> 
+			
+			<div id="toDoList"> 
+			</div> 	
+			<button type="button" class="btn btn-block btn-primary" id="plusTask">Load more task</button>
+		</div>
+	</body> 
+</html> 
